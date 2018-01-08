@@ -18,6 +18,10 @@ git clone https://github.com/small99/deeptest
 
 如何提交在deeptest项目下的文件到github
 
+先进入deeptest目录
+
+cd deeptest
+
 先add一下   
 git add .
 
