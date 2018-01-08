@@ -17,6 +17,13 @@ class Calc:
         self.a = a
         self.b = b
 
+    def set(self, a, b):
+        '''
+        重置a b
+        '''
+        self.a = a
+        self.b = b
+
     def __add__(self):
         '''
         实现两个数的加操作并返回和
@@ -112,8 +119,9 @@ class MySort():
 
 if __name__ == "__main__":
     '''主函数入口'''
-    # calc = Calc(3.55, 6.99)
-    calc = Calc("abc", 3)
+    a = int(input("请输入第1个数据："))
+    b = int(input("请输入第2个数据："))
+    calc = Calc(a, b)
     calc_result = calc.__add__()
     # calc_result = calc.div()
     # calc_result = calc.__sub__()
