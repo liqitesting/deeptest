@@ -27,6 +27,7 @@ class MySort():
         :param start: 限制随机数生产的范围
         :param end: 生成随机数生产的范围
         :param count: 生成的随机数个数
+        :mylist为生成的随机数组成的列表
         '''
         self.start = start
         self.end = end
@@ -43,6 +44,9 @@ class MySort():
 
 
     def __mysort__(self):
+        '''
+        使用冒泡法排序
+        '''
         mycount = self.count
         for i in range(0, mycount):
             for j in range(i + 1, mycount):
