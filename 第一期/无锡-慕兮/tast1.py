@@ -15,7 +15,7 @@ class Calc:
         return self.a * self.b
 
     def div(self):
-        return  self.a / self.b
+        return self.a / self.b
 
 
 class MySort():
@@ -31,17 +31,24 @@ class MySort():
         self.start = start
         self.end = end
         self.count = count
+        self.mylist = []
 
         mycount = 0
-        mylist = []
-        while mycount <=self.count:
+        while mycount <self.count:
             value = random.uniform(self.start, self.end)
             mycount = mycount + 1
-            mylist.append(value)
+            self.mylist.append(value)
+        self.__mysort__()
+        print(self.mylist)
 
 
     def __mysort__(self):
-        pass
+        mycount = self.count
+        for i in range(0, mycount):
+            for j in range(i + 1, mycount):
+                if self.mylist[i] > self.mylist[j]:
+                    self.mylist[i], self.mylist[j] = self.mylist[j], self.mylist[i]
+
 
 
 
