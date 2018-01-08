@@ -106,11 +106,19 @@ class MySort():
         '''
         使用冒泡法排序
         '''
-        mycount = self.count
-        for i in range(0, mycount):
-            for j in range(i + 1, mycount):
-                if self.mylist[i] > self.mylist[j]:
-                    self.mylist[i], self.mylist[j] = self.mylist[j], self.mylist[i]
+        # mycount = self.count
+        # for i in range(0, mycount):
+        #     for j in range(i + 1, mycount):
+        #         if self.mylist[i] > self.mylist[j]:
+        #             self.mylist[i], self.mylist[j] = self.mylist[j], self.mylist[i]
+
+        for i in range(1, self.count):
+            value = self.mylist[i]
+            j = i - 1
+            while j >= 0 and self.mylist[j] < value:
+                self.mylist[j + 1] = self.mylist[j]
+                j -= 1
+            self.mylist[j + 1] = value
 
 
 
@@ -119,15 +127,12 @@ class MySort():
 
 if __name__ == "__main__":
     '''主函数入口'''
-    a = int(input("请输入第1个数据："))
-    b = int(input("请输入第2个数据："))
-    calc = Calc(a, b)
-    calc_result = calc.__add__()
-    # calc_result = calc.div()
-    # calc_result = calc.__sub__()
-    calc_result = calc.__mul__()
+    # a = input("请输入第1个数据：")
+    # b = input("请输入第2个数据：")
+    # calc = Calc(a, b)
+    # calc_result = calc.__add__()
+    # print(calc_result)
 
-    print(calc_result)
-    # myso = MySort(10, 1000, 100)
-    # print(myso)
+    myso = MySort(10, 1000, 100)
+    print(myso)
 
