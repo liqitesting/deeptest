@@ -1,21 +1,73 @@
+#! -*- coding:utf-8 -*-
+
+#！__author__ == "无锡-慕兮"
+
 import random
 
 class Calc:
+    '''
+        实现任何两个数的加、减、乘、除
+    '''
     def __init__(self, a, b):
+        '''
+        定义参数
+        :param a: 
+        :param b: 
+        '''
         self.a = a
         self.b = b
 
     def __add__(self):
-        return self.a + self.b +self.a
+        '''
+        实现两个数的加操作并返回和
+        '''
+        try:
+            if float(self.a) or float(self.b):
+                return self.a + self.b
+        except ValueError:
+            return ("这是数字的加法运算，请重新输入数字")
+        except Exception as others:
+            return ("其他错误，请告诉程序员这是加法的锅", others)
 
     def __sub__(self):
-        return self.a - self.b
+        '''
+        实现两个数的减操作并返回差 
+        '''
+        try:
+            return self.a - self.b
+        except TypeError:
+            return ("这是数字的减法运算，请重新输入数字")
+        except Exception as others:
+            return ("其他错误，请告诉程序员这是减法的锅", others)
 
     def __mul__(self):
-        return self.a * self.b
+        '''
+        实现两个数的乘操作，并返回积 
+        '''
+        try:
+            if float(self.a) or float(self.b):
+                return self.a * self.b
+        except ValueError:
+            return ("这是数字的乘法运算，请重新输入数字")
+        except Exception as others:
+            return("其他错误，请告诉程序员这是乘法的锅", others)
 
     def div(self):
-        return self.a / self.b
+        '''
+        实现两个数的除操作，并返回商
+        :return: 
+        '''
+        try:
+            return self.a / self.b
+        except ZeroDivisionError:
+            return ("被除数不能为零，请重新输入")
+        except TypeError:
+            return ("这是数字的除法运算，请重新输入数字")
+        except Exception as others:
+            return ("其他错误，请告诉程序员这是除法的锅", others)
+
+
+######################################################################
 
 
 class MySort():
@@ -59,10 +111,15 @@ class MySort():
 
 
 if __name__ == "__main__":
-    # calc = Calc(5, 4)
-    # calc_result = calc.__add__()
-    # # calc_result = calc.div()
-    # print(calc_result)
-    myso = MySort(10, 1000, 100)
-    print(myso)
+    '''主函数入口'''
+    # calc = Calc(3.55, 6.99)
+    calc = Calc("abc", 3)
+    calc_result = calc.__add__()
+    # calc_result = calc.div()
+    # calc_result = calc.__sub__()
+    calc_result = calc.__mul__()
+
+    print(calc_result)
+    # myso = MySort(10, 1000, 100)
+    # print(myso)
 
