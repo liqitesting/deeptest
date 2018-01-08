@@ -28,11 +28,7 @@ class MySort:
             for j in range(i, self.count - 1):
                 if a[j + 1] < a[i]:
                     a[i], a[j + 1] = a[j + 1], a[i]
-        return str(a)
-        print(self.mysort())
-
-    # def __str__(self):
-    #     return self.mysort()
+        return a
 
 
 if __name__ == '__main__':
