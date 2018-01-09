@@ -1,0 +1,89 @@
+安装完成后的第一步，自报家门：
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+ps：注意git config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置。
+
+本地创建版本库：
+找一个空目录；
+创建目录： $ mkdir learngit
+进入目录： $ cd learngit
+查看当前目录： $ pwd
+
+通过git init命令把这个目录变成Git可以管理的仓库：
+$ git init
+Initialized empty Git repository in /Users/michael/learngit/.git/
+
+添加文件：
+一定要放到上面的目录下（子目录也行）
+第一步，用命令git add告诉Git，把文件添加到仓库：
+$ git add readme.txt
+
+第二步，用命令git commit告诉Git，把文件提交到仓库：
+$ git commit -m "wrote a readme file"
+
+运行git status命令看看结果：
+$ git status
+
+git diff顾名思义就是查看difference：
+$ git diff readme.txt 
+
+用git log命令查看历史记录：
+$ git log
+$ git log --pretty=oneline
+
+回退到上一版本：
+$ git reset --hard HEAD^
+回退到某一个版本：
+$ git reset --hard 3628164
+
+查看文档：
+$ cat readme.txt
+
+git reflog用来记录你的每一次命令文件：
+$ git reflog
+
+用git diff HEAD -- readme.txt命令可以查看工作区和版本库里面最新版本的区别：
+$ git diff HEAD -- readme.txt
+
+git checkout -- file可以丢弃工作区的修改：
+$ git checkout -- readme.txt
+
+用命令git reset HEAD file可以把暂存区的修改撤销掉（unstage），重新放回工作区：
+$ git reset HEAD readme.txt
+
+本地删除文件：
+$ rm test.txt
+
+要从版本库中删除该文件，那就用命令git rm删掉，并且git commit：
+$ git rm test.txt
+$ git commit -m "remove test.txt"
+
+删错了，丢弃本地文档的修改：
+$ git checkout -- test.txt
+
+创建SSH Key：
+$ ssh-keygen -t rsa -C "youremail@example.com"
+
+第2步：登陆GitHub，打开“Account settings”，“SSH Keys”页面：
+然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容：
+点“Add Key”，你就应该看到已经添加的Key：
+
+本地账户与远程账户建立连接：
+$ git remote add origin git@github.com:michaelliao/learngit.git
+就可以把本地库的所有内容推送到远程库上：
+$ git push -u origin master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
