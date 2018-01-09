@@ -21,18 +21,17 @@ if __name__=='__main__':
     #按照空格进行切割
     list_data=data.split(' ')
     #打印切割结果
-    print(list_data)
+    print(list_data)'''
 
 __anthor__="棒棒糖"
 import sys
 if __name__=='__main__':
     print('命令行参数个数:%d'%len(sys.argv))
     print('命令行参数列表:%s'%str(sys.argv))
-    #打印了你当前运行文件的路径'''
+    #打印了你当前运行文件的路径
+    print(sys.argv[0])
 
-import sys
-print(sys.argv[0])
-print(sys.argv[1])
+
 
 
 
