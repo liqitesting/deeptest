@@ -93,13 +93,18 @@ class MySort():
         self.count = count
         self.mylist = []
 
-        mycount = 0
-        while mycount <self.count:
-            value = random.uniform(self.start, self.end)
-            mycount = mycount + 1
-            self.mylist.append(value)
-        self.__mysort__()
-        print(self.mylist)
+        if type(count) != int:
+            raise Exception("count 应为整数")
+        elif start > end:
+            raise Exception("开始数字要小于结束数字")
+        else:
+            mycount = 0
+            while mycount < self.count:
+                value = random.uniform(self.start, self.end)
+                mycount = mycount + 1
+                self.mylist.append(value)
+            self.__mysort__()
+            print(self.mylist)
 
 
     def __mysort__(self):
@@ -112,13 +117,25 @@ class MySort():
         #         if self.mylist[i] > self.mylist[j]:
         #             self.mylist[i], self.mylist[j] = self.mylist[j], self.mylist[i]
 
+        '''
+        使用插入法排序, 从小到大排序
+        '''
         for i in range(1, self.count):
             value = self.mylist[i]
             j = i - 1
-            while j >= 0 and self.mylist[j] < value:
+            while j >= 0 and self.mylist[j] > value:
                 self.mylist[j + 1] = self.mylist[j]
                 j -= 1
             self.mylist[j + 1] = value
+
+
+
+
+
+
+
+
+
 
 
 
