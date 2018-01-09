@@ -44,7 +44,6 @@ class MySort(object):
 
         for i in range(self.count):
             data.append(random.randint(self.start,self.end))
-        print data
         for i in range(len(data)-1):
             for j in range(len(data)-i-1):
                 if data[j] > data[j+1]:
