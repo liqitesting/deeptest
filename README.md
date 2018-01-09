@@ -14,7 +14,7 @@ webdriver
 
 selenium
 
-robotframeword
+robotframework
 
 jmeter
 
