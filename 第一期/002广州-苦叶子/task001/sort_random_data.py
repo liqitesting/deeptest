@@ -41,9 +41,6 @@ class MySort:
 
         return self.random_data
 
-
-        return random_data 
-
 # 使用示例
 if __name__ == "__main__":
     sorted_data = MySort(10, 1000, 100)
